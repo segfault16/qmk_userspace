@@ -28,7 +28,9 @@ enum dilemma_keymap_layers {
 // #define DILEMMA_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 
 #define LOWER MO(LAYER_LOWER)
+#define LOWER_G LM(LAYER_LOWER, MOD_LGUI)
 #define RAISE MO(LAYER_RAISE)
+#define POINTR MO(LAYER_POINTER)
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
@@ -59,23 +61,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_EQL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         KC_LALT, KC_BSPC,   LOWER,  KC_SPC,      RAISE,  KC_ENT, KC_DEL,  KC_MUTE
+                         KC_LALT, KC_BSPC,   POINTR,  KC_SPC,      LOWER_G,  KC_ENT, KC_DEL,  KC_MUTE
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
   ),
 
   [LAYER_LOWER] = LAYOUT(
-  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       QK_LLCK,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,      KC_F6,   KC_F7,   KC_F8,   KC_F9,  POINTER_DEFAULT_DPI_REVERSE,  POINTER_DEFAULT_DPI_FORWARD,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_TRNS, KC_LEFT,   KC_UP, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       DRGSCRL, KC_TRNS, KC_DOWN, KC_RGHT, KC_TRNS, KC_TRNS,    KC_TRNS, KC_MS_WH_DOWN, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_TRNS, KC_HOME, KC_PGUP, KC_PGDN,  KC_END, KC_TRNS,    KC_TRNS, KC_TRNS, KC_HOME, KC_END, KC_TRNS, KC_TRNS,
-  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_BTN1, KC_BTN2, KC_TRNS, KC_ENT
-  //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
-  ),
+    // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
+         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
+                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
+    ),
+
 
   [LAYER_RAISE] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
@@ -92,18 +95,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [LAYER_POINTER] = LAYOUT(
-  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-  //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
-  ),
+    // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
+         QK_LLCK,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,      KC_F6,   KC_F7,   KC_F8,   KC_F9,  POINTER_DEFAULT_DPI_REVERSE,  POINTER_DEFAULT_DPI_FORWARD,
+    // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+         KC_TRNS, KC_LEFT,   KC_UP, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS,
+    // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+         DRGSCRL, KC_TRNS, KC_DOWN, KC_RGHT, KC_TRNS, KC_TRNS,    KC_TRNS, KC_MS_WH_DOWN, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS,
+    // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+         KC_TRNS, KC_HOME, KC_PGUP, KC_PGDN,  KC_END, KC_TRNS,    KC_TRNS, KC_TRNS, KC_HOME, KC_END, KC_TRNS, KC_TRNS,
+    // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
+                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_BTN1, KC_BTN2, KC_TRNS, KC_ENT
+    //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
+    ),
 };
 // clang-format on
 
@@ -125,9 +128,9 @@ void rgb_matrix_update_pwm_buffers(void);
 // clang-format off
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [LAYER_BASE]       = {ENCODER_CCW_CW(G(KC_LBRC), G(KC_RBRC)), ENCODER_CCW_CW(KC_LEFT, KC_RGHT)},
-    [LAYER_LOWER]      = {ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
+    [LAYER_LOWER]      = {ENCODER_CCW_CW(S(KC_TAB), KC_TAB), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
     [LAYER_RAISE]      = {ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [LAYER_POINTER]    = {ENCODER_CCW_CW(RGB_HUD, RGB_HUI), ENCODER_CCW_CW(RGB_SAD, RGB_SAI)},
+    [LAYER_POINTER]    = {ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
 };
 // clang-format on
 #endif // ENCODER_MAP_ENABLE
